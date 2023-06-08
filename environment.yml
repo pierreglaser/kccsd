@@ -1,0 +1,37 @@
+name: calibration
+channels:
+  - conda-forge
+  - pytorch
+dependencies:
+  - python=3.9
+  - cmake
+  - ninja
+  - pip
+  - jax
+  - jaxopt
+  - blackjax
+  - flax
+  - numpyro
+  - ipykernel
+  - ipywidgets
+  - black
+  - pytest
+  - pytest-env
+  - pytest-xdist
+  - pandas
+  - numpy
+  - pillow
+  - pyro-ppl
+  - pytorch
+  - scikit-learn
+  - scipy
+  - pip:
+    - git+https://github.com/diyabc/abcranger@027bff7f8c5e5443edbeba0a2f57a7d226c2a2c3; platform_system == "Darwin"
+    - pyabcranger; platform_system == "Linux"
+    - sbibm
+    - tfp-nightly[jax]
+    - ./vendor/jax_samplers
+    - ./vendor/kwgflows
+    - ./vendor/sbi_ebm/
+    - -e ./calibration
+    - -e ./calibration_benchmarks/

@@ -1,0 +1,41 @@
+name: calibration-gpu
+channels:
+  - conda-forge
+  - nvidia
+  - pytorch
+dependencies:
+  - python=3.9
+  - cmake
+  - ninja
+  - pip
+  - cuda-nvcc=11.6
+  - jax
+  - jaxlib=0.4.3=*cuda*
+  - jaxopt
+  - blackjax
+  - flax
+  - numpyro
+  - ipykernel
+  - ipywidgets
+  - black
+  - pytest
+  - pytest-env
+  - pytest-xdist
+  - pandas
+  - numpy
+  - pillow
+  - pyro-ppl
+  - pytorch
+  - pytorch-cuda=11.6
+  - scikit-learn
+  - scipy
+  - pip:
+    - git+https://github.com/diyabc/abcranger@027bff7f8c5e5443edbeba0a2f57a7d226c2a2c3; platform_system == "Darwin"
+    - pyabcranger; platform_system == "Linux"
+    - sbibm
+    - tfp-nightly[jax]
+    - ./vendor/jax_samplers
+    - ./vendor/kwgflows
+    - ./vendor/sbi_ebm/
+    - -e ./calibration
+    - -e ./calibration_benchmarks/
